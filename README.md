@@ -1,6 +1,6 @@
 # azure-vote-aks
 Azure AKS kubernetes cluster.
-* [Tutorial}(https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal?WT.mc_id=APC-Kubernetesservices)
+* [Tutorial](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal?WT.mc_id=APC-Kubernetesservices)
 
 ## 1. Create k8s cluster on Azure
 * Set cluster name, region, and kubernetes version. Click `Next: Node pools`.
@@ -8,8 +8,8 @@ Azure AKS kubernetes cluster.
 * Use default settings for the Node pools. Click `Next: Authentication`.
 ![Create 02](./docs/img/Create-k8s_02.png)
 * Authentication. Click `Next: Networking`.
-** Authentication method: _System-assigned managed identity_
-** Role-based access control (RBAC): Enabled
+    - Authentication method: _System-assigned managed identity_
+    - Role-based access control (RBAC): Enabled
 ![Create 03](./docs/img/Create-k8s_03.png)
 * Networking (use default settings). Click `Review + create`.
 ![Create 04](./docs/img/Create-k8s_04.png)
@@ -65,5 +65,9 @@ Azure Voting App:
 
 ## 3. Delete k8s Deployments
 ```sh
-$ kb delete deploy -f azure-vote.yaml 
+$ kb delete -f azure-vote.yaml
+deployment.apps "azure-vote-back" deleted
+service "azure-vote-back" deleted
+deployment.apps "azure-vote-front" deleted
+service "azure-vote-front" deleted
 ```
